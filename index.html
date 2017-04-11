@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Bootstrap 3</title>
+</head>
+<body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#responsive-navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><strong>blhekai</strong>.com</a>
+            </div>
+            <div class="collapse navbar-collapse" id="responsive-navbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="">Python</a></li>
+                    <li><a href="">Java</a></li>
+                    <li><a href="">.Net</a></li>
+                </ul>
+
+                <form action="" class="navbar-form navbar-left">
+                    <input type="text" placeholder="搜索" class="form-control">
+                    <button type="submit">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                </form>
+                <a href="" class="btn btn-primary btn-sm navbar-btn navbar-right hidden-xs">订阅</a>
+                <div class="profile navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li><a href="login-form.html" data-toggle="modal" data-target="#login-modal">登陆</a></li>
+                        <li><a href="">注册</a></li>
+                    </ul>
+                    <p class="navbar-text">您好，<a href="#" class="navbar-link">菜农</a></p>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="carousel slide" data-ride="carousel" id="slideshow">
+            <div class="carousel-inner">
+
+                <ol class="carousel-indicators">
+                    <li data-target="#slideshow" data-slide-to="0" class="active">                    </li>
+                    <li data-target="#slideshow" data-slide-to="1"></li>
+                </ol>
+
+                <div class="item active carousel-img">
+                    <img src="img.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="holder.js/1200x500?text=JavaScript" alt="">
+                </div>
+            </div>
+
+            <a href="#slideshow" data-slide="prev" class="left carousel-control">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a href="#slideshow" data-slide="next" class="right carousel-control">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+
+        </div>
+        <div class="text-center" style="padding: 20px;">
+            <div class="btn-group">
+                <button class="btn btn-default prev-slide">
+                    <span class="glyphicon glyphicon-backward"></span>
+                </button>
+                <button class="btn btn-default play-and-stop">
+                    <span class="glyphicon glyphicon-play"></span>
+                </button>
+                <button class="btn btn-default next-slide">
+                    <span class="glyphicon glyphicon-forward"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!--<div class="container">-->
+        <!--<p class="alert alert-info">-->
+            <!--"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."-->
+        <!--</p>-->
+    <!--</div>-->
+
+    <div class="modal fade" id="login-modal" tabindex="-1">
+		<!--	load form login-form.html	-->
+    </div>
+
+    <script src="jquery-3.2.0.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/holder.min.js"></script>
+    <script>
+        $(function (){
+            $('#login-modal').modal({
+                show: false,
+                backdrop: true,
+//                remote: "login-form.html"
+            });
+        });
+            $('#login-modal').load("login-form.html");
+            $(function () {
+                $('#login-modal').on('show.bs.modal', function () {
+                    console.log('显示对话框');
+                });
+                $('#login-modal').on('shown.bs.modal', function () {
+                    console.log('已显示对话框');
+                });
+                $('#login-modal').on('hide.bs.modal', function () {
+                    console.log('隐藏对话框');
+                });
+                $('#login-modal').on('hidden.bs.modal', function () {
+                    console.log('对话框已经隐藏');
+                });
+                $('#login-modal').on('loaded.bs.modal', function () {
+                    console.log('对话框加载完毕');
+                });
+        })
+    </script>
+</body>
+</html>
